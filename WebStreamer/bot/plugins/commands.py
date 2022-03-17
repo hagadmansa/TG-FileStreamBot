@@ -212,4 +212,9 @@ async def command(b, m:Message):
         text=f"{random.choice(Hello)}",
         disable_web_page_preview=True,
     )
-   
+@StreamBot.on_message(filters.command('hellotest'))
+async def command(b, m:Message):
+    await m.reply_text(
+        text=f'Hello my name is{Var.BOT_NAME}",
+        disable_web_page_preview=True,
+    )

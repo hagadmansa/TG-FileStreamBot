@@ -11,3 +11,8 @@ async def start(_, m: Message):
     await m.reply(
         f'Hi {m.from_user.mention(style="md")}, Send me a new file to get an instant stream link.'
     )
+@StreamBot.on_message(filters.command(["about"]))
+async def start(_, m: Message):
+    await m.reply(
+        f'follow me on telegram <a href="https://hagadmansa.com/telegram> here</a>.'
+    )

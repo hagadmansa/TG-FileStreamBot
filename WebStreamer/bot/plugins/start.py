@@ -16,3 +16,8 @@ async def start(_, m: Message):
     await m.reply(
         f'follow me on telegram <a href="https://hagadmansa.com/telegram/">here</a>.'
     )
+@StreamBot.on_message(filters.command(["new"]))
+async def start(_, m: Message):
+    await m.reply(
+        f'namaste sharks.'
+    )

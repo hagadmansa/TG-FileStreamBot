@@ -12,9 +12,9 @@ async def start(_, m: Message):
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="""👋 Hello {m.from_user.mention(style="md")},
+        text="""👋 Hello {},
         
-🤖 My Name is <a href=https://t.me/{}>{}</a>, I can stream Telegram Files over HTTP.
+🤖 My Name is Hagadmansa Mega Bot, I can stream Telegram Files over HTTP.
 
 🧐 Don't know how to do? No worries, just press the help button.
 
@@ -27,7 +27,6 @@ async def command(b, m:Message):
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
         ]]),
-        parse_mode="html"
     )
     
 START_TEXT = """

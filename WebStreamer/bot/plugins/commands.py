@@ -204,6 +204,8 @@ We are not raising any funds right now, if in future we raise funds then we'll u
         disable_web_page_preview=True,
     )
     
+Hello=["Hallo","Përshëndetjel","እው ሰላም ነው","أهلا","Բարեւ","Salam","Kaixo","добры дзень","হ্যালো","zdravo","Здравейте","Hola","Hello","Moni","你好","你好","Bonghjornu","zdravo","Ahoj","Hej","Hallo","Hello","Saluton","Tere","Kamusta","Hei","Bonjour","Hoi","Ola","გამარჯობა","Hallo","Χαίρετε","નમસ્તે","Bonjou","Sannu","aloha","שלום"]
+
 @StreamBot.on_message(filters.command('hello'))
 async def command(b, m:Message):
     await m.reply_text(
@@ -211,4 +213,3 @@ async def command(b, m:Message):
         disable_web_page_preview=True,
     )
    
-Hello=["Hallo","Përshëndetjel","እው ሰላም ነው","أهلا","Բարեւ","Salam","Kaixo","добры дзень","হ্যালো","zdravo","Здравейте","Hola","Hello","Moni","你好","你好","Bonghjornu","zdravo","Ahoj","Hej","Hallo","Hello","Saluton","Tere","Kamusta","Hei","Bonjour","Hoi","Ola","გამარჯობა","Hallo","Χαίρετε","નમસ્તે","Bonjou","Sannu","aloha","שלום"]

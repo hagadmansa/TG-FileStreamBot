@@ -8,13 +8,13 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="""👋 Hello {m.from_user.mention},
+        text="""👋 Hello {},
         
-🤖 My Name is {Var.BOT_NAME}, I can stream Telegram Files over HTTP.
+🤖 My Name is {}, I can stream Telegram Files over HTTP.
 
 🧐 Don't know how to do? No worries, just press the help button.
 
-👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""",
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""".format(m.from_user.mention, var.BOT_NAME),
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
@@ -51,7 +51,7 @@ async def command(b, m:Message):
     await m.reply_text(
         text="""<b>ℹ️ Help</b> > How To Use Me
         
-My name is {Var.BOT_NAME}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
+My name is {}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
 
 • Send me any file/media from Telegram.
 • I Will provide an external download link for you.
@@ -59,7 +59,7 @@ My name is {Var.BOT_NAME}, I am a member of Hagadmansa family. I can provide you
 
 <b>🔞 Warning:</b>
 
-• 18+ content and pornography are strictly prohibited. Don't send me any pornographic/violent videos. You will get an instant ban if we see any kind of content like this.""",
+• 18+ content and pornography are strictly prohibited. Don't send me any pornographic/violent videos. You will get an instant ban if we see any kind of content like this.""".format(var.BOT_NAME),
         reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('🔙 Back', callback_data='help'),
@@ -113,7 +113,7 @@ async def command(b, m:Message):
     await m.reply_text(
         text="""<b>😊 About</b>
         
-<b>✯ My Name:</b> {Var.BOT_NAME}
+<b>✯ My Name:</b> {}
 <b>✯ Creator:</b> <a href='https://t.me/hagadmansa'>Hagadmansa</a>
 <b>✯ Library:</b> <a href='https://pyrogram.org'>Pyrogram</a>
 <b>✯ Language:</b> <a href='https://Python.org'>Python</a>
@@ -121,7 +121,7 @@ async def command(b, m:Message):
 <b>✯ Server:</b> <a href='https://heroku.com'>Heroku</a>
 <b>✯ Channel:</b> <a href='https://t.me/hagadmansa'>Hagadmansa</a>
 <b>✯ Group:</b> <a href='https://t.me/hagadmansachat'>Hagadmansa Support</a>
-<b>✯ Brothers:</b> <a href='https://t.me/hagadmansabot'>Hagadmansa Bot</a>, <a href='https://t.me/hagadmansarobot'>Hagadmansa Robot</a>""",
+<b>✯ Brothers:</b> <a href='https://t.me/hagadmansabot'>Hagadmansa Bot</a>, <a href='https://t.me/hagadmansarobot'>Hagadmansa Robot</a>""".format(var.BOT_NAME),
         reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('🌐 Visit Our Website', url='https://hagadmansa.com')

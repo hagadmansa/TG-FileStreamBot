@@ -1,9 +1,7 @@
-# This file is a part of TG-FileStreamBot
-# Coding : Jyothis Jayanth [@EverythingSuckz]
-
 from pyrogram import filters
 from pyrogram.types import Message
 from WebStreamer.bot import StreamBot
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
     
 @StreamBot.on_message(filters.command(["about"]))
 async def start(_, m: Message):
@@ -11,3 +9,8 @@ async def start(_, m: Message):
         f'follow me on telegram <a href="https://hagadmansa.com/telegram/">here</a>.'
     )
    
+@StreamBot.on_message(filters.command('start'))
+async def command(b, m:Message):
+    await m.reply_text(
+        text="Your Text"
+    )

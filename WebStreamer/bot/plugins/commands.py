@@ -176,7 +176,7 @@ async def command(b, m:Message):
         
 <b>❗️NOTE:</b>
 
-We are not open source yet, if in future we are open our code for everyone then we'll update the source code here."""
+We are not open source yet, if in future we are open our code for everyone then we'll update the source code here.""",
         reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('🔙 Back', callback_data='help'),
@@ -193,7 +193,7 @@ async def command(b, m:Message):
         
 <b>❗️NOTE:</b>
 
-We are not raising any funds right now, if in future we raise funds then we'll update here."""
+We are not raising any funds right now, if in future we raise funds then we'll update here.""",
         reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('🔙 Back', callback_data='help'),

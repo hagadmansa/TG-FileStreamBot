@@ -227,3 +227,21 @@ async def cb_data(bot, update):
             disable_web_page_preview=True,
             reply_markup=TUTORIALS_BUTTONS
         )
+    elif update.data == "rating":
+        await update.message.edit_text(
+            text=RATING_TEXT,
+            disable_web_page_preview=True,
+            reply_markup=RATING_BUTTONS
+        )
+    elif update.data == "source":
+        await update.message.edit_text(
+            text=SOURCE_TEXT,
+            disable_web_page_preview=True,
+            reply_markup=SOURCE_BUTTONS
+        )
+    elif update.data == "donate":
+        await update.message.edit_text(
+            text=DONATE_TEXT,
+            disable_web_page_preview=True,
+            reply_markup=DONATE_BUTTONS
+        )

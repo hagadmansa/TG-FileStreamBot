@@ -14,7 +14,7 @@ async def command(b, m:Message):
 
 🧐 Don't know how to do? No worries, just press the help button.
 
-👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""".format(m.from_user.mention),
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""",
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),

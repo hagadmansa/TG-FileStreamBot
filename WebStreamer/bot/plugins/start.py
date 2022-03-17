@@ -45,7 +45,7 @@ Here is the list of my commands, please read carefully everything. if anything h
 
 HOWTOUSEME_TEXT = """<b>ℹ️ Help</b> > How To Use Me
 
-My name is {}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
+My name is Hagadmansa Mega Bot, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
 
 • Send me any file/media from Telegram.
 • I Will provide an external download link for you.
@@ -53,7 +53,7 @@ My name is {}, I am a member of Hagadmansa family. I can provide you direct down
 
 <b>🔞 Warning:</b>
 
-• 18+ content and pornography are strictly prohibited. Don't send me any pornographic/violent videos. You will get an instant ban if we see any kind of content like this.""".format(Var.BOT_TOKEN)
+• 18+ content and pornography are strictly prohibited. Don't send me any pornographic/violent videos. You will get an instant ban if we see any kind of content like this."""
 
 INSTRUCTIONS_TEXT = """<b>ℹ️ Help</b> > Instructions
 

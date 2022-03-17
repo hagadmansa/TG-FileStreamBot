@@ -15,9 +15,8 @@ async def command(b, m:Message):
         text="Your Text",
         reply_markup=InlineKeyboardMarkup(
                     [[
-                        InlineKeyboardButton("📡 Join Updates Channel", url=f"https://t.me/{Var.UPDATES_CHANNEL}")
+                        InlineKeyboardButton("📡 Join Updates Channel", url=f"https://t.me/hagadmansa")
                         ]]
                 ),
-                parse_mode="markdown"
-            )
+        parse_mode="markdown"
     )

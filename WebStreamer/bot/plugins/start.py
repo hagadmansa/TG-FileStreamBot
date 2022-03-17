@@ -2,6 +2,8 @@ from pyrogram import filters
 from pyrogram.types import Message
 from WebStreamer.bot import StreamBot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+Hello=["Hallo","Përshëndetjel","እው ሰላም ነው","أهلا","Բարեւ","Salam","Kaixo","добры дзень","হ্যালো","zdravo","Здравейте","Hola","Hello","Moni","你好","你好","Bonghjornu","zdravo","Ahoj","Hej","Hallo","Hello","Saluton","Tere","Kamusta","Hei","Bonjour","Hoi","Ola","გამარჯობა","Hallo","Χαίρετε","નમસ્તે","Bonjou","Sannu","aloha","שלום"]
             
 START_TEXT = """
 👋 Hello {},

@@ -40,7 +40,7 @@ Here is the list of my commands, please read carefully everything. if anything h
             InlineKeyboardButton('🔙 Back', callback_data='home'),
             InlineKeyboardButton('📣 Channel', url='https://t.me/hagadmansa')
         ]]),
-       disable_web_page_preview=True,
+        disable_web_page_preview=True,
     )
     
 START_TEXT = """

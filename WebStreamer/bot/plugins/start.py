@@ -12,20 +12,15 @@ async def start(_, m: Message):
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="START_TEXT.format(update.from_user.mention",
-        reply_markup=InlineKeyboardMarkup(
-                    [[
-            InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', url='https://hagadmansa.com')
-        ]]
-                ),
-        parse_mode="markdown"
+        text="START_TEXT.format(update.from_user.mention"
     )
     
-START_TEXT = """Hello bvhvu gyyguyg gftd iuyuitfg iu gyuftyf uiyiuyyuy f tiuhnugyuffuhhuchgv n jh hbvcfch hgcgfvjh hgcth"""
+START_TEXT = """
+👋 Hello {},
+🤖 My Name is Hagadmansa Mega Bot, I can stream Telegram Files over HTTP.
+🧐 Don't know how to do? No worries, just press the help button.
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>."""
+
     
 HELP_TEXT = """<b>ℹ️ HELP</b>
 Here is the list of my commands, please read carefully everything. if anything happened to you then we are not responsible."""

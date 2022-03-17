@@ -19,5 +19,11 @@ async def start(_, m: Message):
 @StreamBot.on_message(filters.command(["new"]))
 async def start(_, m: Message):
     await m.reply(
-        f'namaste sharks.'
+        text="hello friends"
+        ),
+        quote=True,
+        parse_mode="html",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("Download now", url="https://hagadmansa.com")]]
+        ),
     )

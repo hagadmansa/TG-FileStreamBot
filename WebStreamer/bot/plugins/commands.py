@@ -215,6 +215,6 @@ async def command(b, m:Message):
 @StreamBot.on_message(filters.command('hellotest'))
 async def command(b, m:Message):
     await m.reply_text(
-        text=f'Hello my name is {Var.BOT_NAME}",
+        text=f"Hello my name is {Var.BOT_NAME}",
         disable_web_page_preview=True,
     )

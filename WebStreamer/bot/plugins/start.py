@@ -221,3 +221,9 @@ async def cb_data(bot, update):
             disable_web_page_preview=True,
             reply_markup=ABOUT_BUTTONS
         )
+    elif update.data == "tutorials":
+        await update.message.edit_text(
+            text=TUTORIALS_TEXT,
+            disable_web_page_preview=True,
+            reply_markup=TUTORIALS_BUTTONS
+        )

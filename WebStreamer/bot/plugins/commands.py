@@ -8,7 +8,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="""👋 Hello {},
+        text="""👋 <b>Hello<\b> {},
         
 🤖 My Name is {}, I can stream Telegram Files over HTTP.
 
@@ -29,7 +29,7 @@ async def command(b, m:Message):
 @StreamBot.on_message(filters.command('help'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="""<b>ℹ️ HELP</b>
+        text="""<b>ℹ️ Help</b>
         
 Here is the list of my commands, please read carefully everything. if anything happened to you then we are not responsible.""",
         reply_markup=InlineKeyboardMarkup(
@@ -211,11 +211,5 @@ Hello=["Hallo","Përshëndetjel","እው ሰላም ነው","أهلا","Բարե�
 async def command(b, m:Message):
     await m.reply_text(
         text=f"{random.choice(Hello)}",
-        disable_web_page_preview=True,
-    )
-@StreamBot.on_message(filters.command('test'))
-async def command(b, m:Message):
-    await m.reply_text(
-        text=f"Hello my name is {Var.BOT_NAME}",
         disable_web_page_preview=True,
     )

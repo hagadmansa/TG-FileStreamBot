@@ -8,7 +8,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="""👋 Hello {},
+        text=f"""👋 Hello {},
         
 🤖 My Name is {Var.BOT_NAME}, I can stream Telegram Files over HTTP.
 
@@ -49,7 +49,7 @@ Here is the list of my commands, please read carefully everything. if anything h
 @StreamBot.on_message(filters.command('howtouseme'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="""<b>ℹ️ Help</b> > How To Use Me
+        text=f"""<b>ℹ️ Help</b> > How To Use Me
         
 My name is {Var.BOT_NAME}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
 
@@ -111,7 +111,7 @@ All tutorials related to Bots, Website, Movies and etc, will be updated here. Ti
 @StreamBot.on_message(filters.command('about'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="""<b>😊 About</b>
+        text=f"""<b>😊 About</b>
         
 <b>✯ My Name:</b> {Var.BOT_NAME}
 <b>✯ Creator:</b> <a href='https://t.me/hagadmansa'>Hagadmansa</a>

@@ -12,5 +12,12 @@ async def start(_, m: Message):
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="Your Text"
+        text="Your Text",
+        reply_markup=InlineKeyboardMarkup(
+                    [[
+                        InlineKeyboardButton("📡 Join Updates Channel", url=f"https://t.me/{Var.UPDATES_CHANNEL}")
+                        ]]
+                ),
+                parse_mode="markdown"
+            )
     )

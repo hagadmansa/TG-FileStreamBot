@@ -14,7 +14,7 @@ async def command(b, m:Message):
 
 🧐 Don't know how to do? No worries, just press the help button.
 
-👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""".format(m.from_user.mention, var.BOT_NAME),
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""".format(m.from_user.mention, Var.BOT_NAME),
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
@@ -59,7 +59,7 @@ My name is {}, I am a member of Hagadmansa family. I can provide you direct down
 
 <b>🔞 Warning:</b>
 
-• 18+ content and pornography are strictly prohibited. Don't send me any pornographic/violent videos. You will get an instant ban if we see any kind of content like this.""".format(var.BOT_NAME),
+• 18+ content and pornography are strictly prohibited. Don't send me any pornographic/violent videos. You will get an instant ban if we see any kind of content like this.""".format(Var.BOT_NAME),
         reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('🔙 Back', callback_data='help'),
@@ -121,7 +121,7 @@ async def command(b, m:Message):
 <b>✯ Server:</b> <a href='https://heroku.com'>Heroku</a>
 <b>✯ Channel:</b> <a href='https://t.me/hagadmansa'>Hagadmansa</a>
 <b>✯ Group:</b> <a href='https://t.me/hagadmansachat'>Hagadmansa Support</a>
-<b>✯ Brothers:</b> <a href='https://t.me/hagadmansabot'>Hagadmansa Bot</a>, <a href='https://t.me/hagadmansarobot'>Hagadmansa Robot</a>""".format(var.BOT_NAME),
+<b>✯ Brothers:</b> <a href='https://t.me/hagadmansabot'>Hagadmansa Bot</a>, <a href='https://t.me/hagadmansarobot'>Hagadmansa Robot</a>""".format(Var.BOT_NAME),
         reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('🌐 Visit Our Website', url='https://hagadmansa.com')

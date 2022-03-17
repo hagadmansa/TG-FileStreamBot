@@ -24,7 +24,7 @@ async def command(b, m:Message):
         disable_web_page_preview=True,
     )
       
-      @StreamBot.on_message(filters.command('help'))
+@StreamBot.on_message(filters.command('help'))
 async def command(b, m:Message):
     await m.reply_text(
         text="""<b>ℹ️ HELP</b>

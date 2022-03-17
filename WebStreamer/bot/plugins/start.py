@@ -1,7 +1,6 @@
 from pyrogram import filters
 from pyrogram.types import Message
 from WebStreamer.bot import StreamBot
-from WebStreamer.vars import Var
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
     
 @StreamBot.on_message(filters.command(["about"]))
@@ -124,7 +123,7 @@ We are not raising any funds right now, if in future we raise funds then we'll u
 START_BUTTONS = InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('📣 Updates', url=f"https://t.me/{Var.BOT_NAME})
+            InlineKeyboardButton('📣 Updates', url='https://t.me/{Var.BOT_NAME})
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')

@@ -1,6 +1,6 @@
 import random
-from pyrogram import var
 from pyrogram import filters
+from WebStreamer.vars import Var
 from pyrogram.types import Message
 from WebStreamer.bot import StreamBot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton

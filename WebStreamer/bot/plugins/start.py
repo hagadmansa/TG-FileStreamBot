@@ -20,13 +20,13 @@ async def command(b, m:Message):
 
 👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""",
         reply_markup=InlineKeyboardMarkup
-         [[
+        ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
             InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
-        ]]
+        ]])
     )
     
 START_TEXT = """

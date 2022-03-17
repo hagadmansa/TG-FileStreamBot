@@ -44,3 +44,14 @@ async def cb_data(bot, update):
             disable_web_page_preview=True,
             reply_markup=HELP_BUTTONS
          )       
+HELP_BUTTONS = InlineKeyboardMarkup(
+        [[
+            InlineKeyboardButton('❓ How to use me', callback_data='howtouseme')
+            ],[
+            InlineKeyboardButton('⚙️ Instructions', callback_data='instructions'),
+            InlineKeyboardButton('🕹 Tutorials', callback_data='tutorials'),
+            ],[
+            InlineKeyboardButton('🔙 Back', callback_data='home'),
+            InlineKeyboardButton('📣 Channel', url='https://t.me/hagadmansa')
+        ]]
+    )

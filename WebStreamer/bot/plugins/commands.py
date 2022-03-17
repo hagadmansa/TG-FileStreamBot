@@ -204,22 +204,10 @@ We are not raising any funds right now, if in future we raise funds then we'll u
         disable_web_page_preview=True,
     )
     
-@StreamBot.on_message(filters.command('luckhello'))
+@StreamBot.on_message(filters.command('hello'))
 async def command(b, m:Message):
     await m.reply_text(
         text=f"{random.choice(Hello)}",
         disable_web_page_preview=True,
     )
-    
-Hello=["Hello","नमस्ते"]
-
-@StreamBot.on_message(filters.command('luck'))
-async def command(b, m:Message):
-    await m.reply_text(
-        text=f"{random.choice(luck)}",
-        disable_web_page_preview=False,
-    )
-    
-luck=["🎲","🎯","🎰","⚽","🏀","🎳"]
-    
-
+   

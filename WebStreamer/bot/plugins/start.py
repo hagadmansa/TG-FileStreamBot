@@ -245,9 +245,4 @@ async def cb_data(bot, update):
             disable_web_page_preview=True,
             reply_markup=DONATE_BUTTONS
         )
-    elif update.data == "rating":
-        await update.message.edit_text(
-            text=RATING_TEXT,
-            disable_web_page_preview=True,
-            reply_markup=RATING_BUTTONS
-        )
+    

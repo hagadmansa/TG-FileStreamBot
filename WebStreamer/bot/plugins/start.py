@@ -12,16 +12,35 @@ async def start(_, m: Message):
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="hello himanshu",
+        text="START_TEXT.format(update.from_user.mention",
         reply_markup=InlineKeyboardMarkup(
                     [[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
             InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
             ],[
-            InlineKeyboardButton('ℹ️ Help', url='https://hagadmansa.com'),
+            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', url='https://hagadmansa.com')
         ]]
                 ),
         parse_mode="markdown"
     )
     
+START_TEXT = """Hello bvhvu gyyguyg gftd iuyuitfg iu gyuftyf uiyiuyyuy f tiuhnugyuffuhhuchgv n jh hbvcfch hgcgfvjh hgcth"""
+    
+HELP_TEXT = """<b>ℹ️ HELP</b>
+Here is the list of my commands, please read carefully everything. if anything happened to you then we are not responsible."""
+
+@StreamBot.on_callback_query()
+async def cb_data(bot, update):
+    if update.data == "home":
+        await update.message.edit_text(
+            text=START_TEXT.format(update.from_user.mention),
+            disable_web_page_preview=True,
+            reply_markup=START_BUTTONS
+        )
+    elif update.data == "help":
+        await update.message.edit_text(
+            text=HELP_TEXT,
+            disable_web_page_preview=True,
+            reply_markup=HELP_BUTTONS
+         )       

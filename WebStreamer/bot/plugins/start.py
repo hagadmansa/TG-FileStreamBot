@@ -4,25 +4,14 @@
 from pyrogram import filters
 from pyrogram.types import Message
 from WebStreamer.bot import StreamBot
-
-
-@StreamBot.on_message(filters.command(["start"]))
-async def start(_, m: Message):
-    await m.reply(
-        f'👋 Hello {m.from_user.mention(style="md")}, send me a file to get an instant link'
-    )
     
 @StreamBot.on_message(filters.command(["about"]))
 async def start(_, m: Message):
     await m.reply(
         f'follow me on telegram <a href="https://hagadmansa.com/telegram/">here</a>.'
     )
-@StreamBot.on_message(filters.command(["about"]))
-async def start(_, m: Message):
-    await m.reply(
-        f'namste nijbhujhkuhjguhg'
-    )
-    @Client.on_message(filters.command("start") 
+    
+@Client.on_message(filters.command("start") 
 async def start(client, message):
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
 

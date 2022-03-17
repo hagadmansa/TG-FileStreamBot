@@ -10,7 +10,7 @@ async def command(b, m:Message):
     await m.reply_text(
         text="""👋 Hello {},
         
-🤖 My Name is Hagadmansa Mega Bot, I can stream Telegram Files over HTTP.
+🤖 My Name is {Var.BOT_NAME}, I can stream Telegram Files over HTTP.
 
 🧐 Don't know how to do? No worries, just press the help button.
 
@@ -51,7 +51,7 @@ async def command(b, m:Message):
     await m.reply_text(
         text="""<b>ℹ️ Help</b> > How To Use Me
         
-My name is Hagadmansa Mega Bot, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
+My name is {Var.BOT_NAME}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
 
 • Send me any file/media from Telegram.
 • I Will provide an external download link for you.
@@ -113,7 +113,7 @@ async def command(b, m:Message):
     await m.reply_text(
         text="""<b>😊 About</b>
         
-<b>✯ My Name:</b> Hagadmansa Mega Bot
+<b>✯ My Name:</b> {Var.BOT_NAME}
 <b>✯ Creator:</b> <a href='https://t.me/hagadmansa'>Hagadmansa</a>
 <b>✯ Library:</b> <a href='https://pyrogram.org'>Pyrogram</a>
 <b>✯ Language:</b> <a href='https://Python.org'>Python</a>

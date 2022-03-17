@@ -213,24 +213,28 @@ async def command(b, m:Message):
 async def command(b, m:Message):
     await m.reply_text(
         text="""🎯""",
+        disable_web_page_preview=False,
     )
     
 @StreamBot.on_message(filters.command('slot'))
 async def command(b, m:Message):
     await m.reply_text(
         text="""🎰""",
+        disable_web_page_preview=False,
     )
 
 @StreamBot.on_message(filters.command('dice'))
 async def command(b, m:Message):
     await m.reply_text(
         text="""🎲""",
+        disable_web_page_preview=False,
     )
     
 @StreamBot.on_message(filters.command('luck'))
 async def command(b, m:Message):
     await m.reply_text(
         text=f"{random.choice(emoji)}"
+        disable_web_page_preview=False,
     )
     
 emoji=["🎲 ","🎯"," 🎰"]

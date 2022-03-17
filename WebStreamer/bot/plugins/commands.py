@@ -8,13 +8,13 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="""👋 Hello {},
+        text="""👋 Hello {m.from_user.mention},
         
 🤖 My Name is {Var.BOT_NAME}, I can stream Telegram Files over HTTP.
 
 🧐 Don't know how to do? No worries, just press the help button.
 
-👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""".format(m.from_user.mention),
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""",
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
@@ -49,7 +49,7 @@ Here is the list of my commands, please read carefully everything. if anything h
 @StreamBot.on_message(filters.command('howtouseme'))
 async def command(b, m:Message):
     await m.reply_text(
-        text=f"""<b>ℹ️ Help</b> > How To Use Me
+        text="""<b>ℹ️ Help</b> > How To Use Me
         
 My name is {Var.BOT_NAME}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
 
@@ -111,7 +111,7 @@ All tutorials related to Bots, Website, Movies and etc, will be updated here. Ti
 @StreamBot.on_message(filters.command('about'))
 async def command(b, m:Message):
     await m.reply_text(
-        text=f"""<b>😊 About</b>
+        text="""<b>😊 About</b>
         
 <b>✯ My Name:</b> {Var.BOT_NAME}
 <b>✯ Creator:</b> <a href='https://t.me/hagadmansa'>Hagadmansa</a>

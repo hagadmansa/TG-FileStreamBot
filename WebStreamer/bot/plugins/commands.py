@@ -1,3 +1,4 @@
+import random
 from pyrogram import filters
 from pyrogram.types import Message
 from WebStreamer.bot import StreamBot
@@ -206,19 +207,30 @@ We are not raising any funds right now, if in future we raise funds then we'll u
 async def command(b, m:Message):
     await m.reply_text(
         text="""🎲""",
-        disable_web_page_preview=True,
     )
     
 @StreamBot.on_message(filters.command('dart'))
 async def command(b, m:Message):
     await m.reply_text(
         text="""🎯""",
-        disable_web_page_preview=True,
     )
     
 @StreamBot.on_message(filters.command('slot'))
 async def command(b, m:Message):
     await m.reply_text(
         text="""🎰""",
-        disable_web_page_preview=True,
     )
+
+@StreamBot.on_message(filters.command('dice'))
+async def command(b, m:Message):
+    await m.reply_text(
+        text="""🎲""",
+    )
+    
+@StreamBot.on_message(filters.command('luck'))
+async def command(b, m:Message):
+    await m.reply_text(
+        text=f"{random.choice(emoji)}"
+    )
+    
+emoji=["🎲 ","🎯"," 🎰"]

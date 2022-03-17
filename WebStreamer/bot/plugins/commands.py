@@ -1,5 +1,5 @@
 import random
-WebStreamer.vars import Var
+from pyrogram import var
 from pyrogram import filters
 from pyrogram.types import Message
 from WebStreamer.bot import StreamBot
@@ -213,7 +213,7 @@ async def command(b, m:Message):
         text=f"{random.choice(Hello)}",
         disable_web_page_preview=True,
     )
-@StreamBot.on_message(filters.command('hellotest'))
+@StreamBot.on_message(filters.command('test'))
 async def command(b, m:Message):
     await m.reply_text(
         text=f"Hello my name is {Var.BOT_NAME}",

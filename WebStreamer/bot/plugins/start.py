@@ -16,14 +16,8 @@ async def start(_, m: Message):
     await m.reply(
         f'follow me on telegram <a href="https://hagadmansa.com/telegram/">here</a>.'
     )
-@StreamBot.on_message(filters.command(["new"]))
+@StreamBot.on_message(filters.command(["about"]))
 async def start(_, m: Message):
     await m.reply(
-        text="hello friends"
-        ),
-        quote=True,
-        parse_mode="html",
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Download now", url="https://hagadmansa.com")]]
-        ),
+        f'namste nijbhujhkuhjguhg'
     )

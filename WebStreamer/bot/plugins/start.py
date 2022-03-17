@@ -234,44 +234,4 @@ async def cb_data(bot, update):
             disable_web_page_preview=True,
             reply_markup=TUTORIALS_BUTTONS
         )
-     elif update.data == "about":
-        await update.message.edit_text(
-            text=ABOUT_TEXT,
-            disable_web_page_preview=True,
-            reply_markup=ABOUT_BUTTONS
-        )     
-    elif update.data == "rating":
-        await update.message.edit_text(
-            text=RATING_TEXT,
-            disable_web_page_preview=True,
-            reply_markup=RATING_BUTTONS
-        )    
-    elif update.data == "source":
-        await update.message.edit_text(
-            text=SOURCE_TEXT,
-            disable_web_page_preview=True,
-            reply_markup=SOURCE_BUTTONS
-        )  
-    elif update.data == "donate":
-        await update.message.edit_text(
-            text=DONATE_TEXT,
-            disable_web_page_preview=True,
-            reply_markup=DONATE_BUTTONS
-        )
-    else:
-        await update.message.delete()
-
-def get_media_file_size(m):
-    media = m.video or m.audio or m.document
-    if media and media.file_size:
-        return media.file_size
-    else:
-        return None
-
-
-def get_media_file_name(m):
-    media = m.video or m.document or m.audio
-    if media and media.file_name:
-        return urllib.parse.quote_plus(media.file_name)
-    else:
-        return None
+     

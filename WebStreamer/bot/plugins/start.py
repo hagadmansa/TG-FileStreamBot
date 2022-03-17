@@ -18,8 +18,8 @@ async def command(b, m:Message):
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
             InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
             ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('ℹ️ Help', url='https://hagadmansa.com'),
+            InlineKeyboardButton('😊 About', url='https://hagadmansa.com')
         ]]
                 ),
         parse_mode="markdown"

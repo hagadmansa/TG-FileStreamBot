@@ -26,7 +26,8 @@ async def command(b, m:Message):
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')
-        ]])
+        ]]),
+        parse_mode="markdown"
     )
     
 START_TEXT = """

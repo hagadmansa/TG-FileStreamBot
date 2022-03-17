@@ -33,11 +33,11 @@ async def command(b, m:Message):
 START_TEXT = """
 👋 Hello {},
 
-🤖 My Name is Hagadmansa Mega Bot, I can stream Telegram Files over HTTP.
+🤖 My Name is {}, I can stream Telegram Files over HTTP.
 
 🧐 Don't know how to do? No worries, just press the help button.
 
-👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>."""
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""".format(Var.BOT_TOKEN)
     
 HELP_TEXT = """<b>ℹ️ HELP</b>
 
@@ -123,7 +123,7 @@ We are not raising any funds right now, if in future we raise funds then we'll u
 START_BUTTONS = InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('📣 Updates', url='https://t.me/{Var.BOT_NAME})
+            InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
             ],[
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('😊 About', callback_data='about')

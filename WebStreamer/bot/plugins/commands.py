@@ -8,7 +8,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text=START_TEXT.format(m.from_user.mention, Var.BOT_NAME)),
+        text=START_TEXT.format(m.from_user.mention, Var.BOT_NAME),
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),

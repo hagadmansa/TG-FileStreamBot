@@ -8,13 +8,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="""👋 <b>Hello<\b> {},
-        
-🤖 My Name is {}, I can stream Telegram Files over HTTP.
-
-🧐 Don't know how to do? No worries, just press the help button.
-
-👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""".format(m.from_user.mention, Var.BOT_NAME),
+        text=START_TEXT.format(m.from_user.mention, Var.BOT_NAME)),
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
@@ -213,3 +207,5 @@ async def command(b, m:Message):
         text=f"{random.choice(Hello)}",
         disable_web_page_preview=True,
     )
+    
+    

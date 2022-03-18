@@ -219,3 +219,31 @@ async def cb_data(bot, update):
             disable_web_page_preview=True,
             reply_markup=DONATE_BUTTONS
         )
+        
+@StreamBot.on_message(filters.command('start'))
+async def command(b, m:Message):
+    await m.reply_text(
+        text=START_TEXT.format(m.from_user.mention, Var.BOT_NAME),
+        reply_markup=InlineKeyboardMarkup
+        ([[
+            InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
+            InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
+            ],[
+            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+            InlineKeyboardButton('😊 About', callback_data='about')
+        ]]),
+        disable_web_page_preview=True,
+    )
+     
+@StreamBot.on_message(filters.command('howtouseme'))
+async def command(b, m:Message):
+    await m.reply_text(
+        text=HOWTOUSEME_TEXT.format(Var.BOT_NAME),
+        reply_markup=InlineKeyboardMarkup(
+        [[
+            InlineKeyboardButton('🔙 Back', callback_data='help'),
+            InlineKeyboardButton('🏠 Home', callback_data='home')
+            ]]
+    ),
+        disable_web_page_preview=True,
+    )

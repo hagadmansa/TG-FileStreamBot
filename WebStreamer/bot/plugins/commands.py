@@ -25,29 +25,6 @@ Here is the list of my commands, please read carefully everything. if anything h
         disable_web_page_preview=True,
     )
     
-@StreamBot.on_message(filters.command('howtouseme'))
-async def command(b, m:Message):
-    await m.reply_text(
-        text="""<b>ℹ️ Help</b> > How To Use Me
-        
-My name is {}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
-
-• Send me any file/media from Telegram.
-• I Will provide an external download link for you.
-• All links will be permanent and have the fastest speed.
-
-<b>🔞 Warning:</b>
-
-• 18+ content and pornography are strictly prohibited. Don't send me any pornographic/violent videos. You will get an instant ban if we see any kind of content like this.""".format(Var.BOT_NAME),
-        reply_markup=InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('🔙 Back', callback_data='help'),
-            InlineKeyboardButton('🏠 Home', callback_data='home')
-            ]]
-    ),
-        disable_web_page_preview=True,
-    )
-    
 @StreamBot.on_message(filters.command('instructions'))
 async def command(b, m:Message):
     await m.reply_text(

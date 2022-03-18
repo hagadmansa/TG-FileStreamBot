@@ -5,23 +5,6 @@ from pyrogram.types import Message
 from WebStreamer.bot import StreamBot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-START_TEXT=...
-
-@StreamBot.on_message(filters.command('start'))
-async def command(b, m:Message):
-    await m.reply_text(
-        text=START_TEXT.format(m.from_user.mention, Var.BOT_NAME),
-        reply_markup=InlineKeyboardMarkup
-        ([[
-            InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
-            ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
-        ]]),
-        disable_web_page_preview=True,
-    )
-     
 @StreamBot.on_message(filters.command('help'))
 async def command(b, m:Message):
     await m.reply_text(

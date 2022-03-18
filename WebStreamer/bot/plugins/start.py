@@ -11,7 +11,7 @@ START_TEXT = """
 
 🧐 Don't know how to do? No worries, just press the help button.
 
-👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""".format(m.from_user.mention, Var.BOT_NAME)
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>."""
     
 HELP_TEXT = """<b>ℹ️ Help</b>
 

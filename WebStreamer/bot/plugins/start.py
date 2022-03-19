@@ -5,7 +5,7 @@ from WebStreamer.bot import StreamBot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 START_TEXT = """
-👋 <b>Hello</b> {},
+👋 <b>Hello</b> {m.from_user.mention(style="md")},
 
 🤖 My Name is {}, I can stream Telegram Files over HTTP.
 
@@ -223,7 +223,7 @@ async def cb_data(bot, update):
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text=START_TEXT.format{m.from_user.mention, Var.BOT_NAME},
+        text=START_TEXT.format{Var.BOT_NAME},
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),

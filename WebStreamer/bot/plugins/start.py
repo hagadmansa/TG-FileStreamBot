@@ -11,7 +11,7 @@ START_TEXT = """
 
 🧐 Don't know how to do? No worries, just press the help button.
 
-👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""".format{Var.BOT_NAME}
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>."""
     
 HELP_TEXT = """<b>ℹ️ Help</b>
 
@@ -223,7 +223,7 @@ async def cb_data(bot, update):
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text=START_TEXT,
+        text=START_TEXT.format{Var.BOT_NAME},
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),

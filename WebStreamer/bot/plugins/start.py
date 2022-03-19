@@ -5,7 +5,7 @@ from WebStreamer.bot import StreamBot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 START_TEXT = """
-👋 <b>Hello</b> {},
+👋 <b>Hello</b> {m.from_user.mention},
 
 🤖 My Name is {}, I can stream Telegram Files over HTTP.
 
@@ -19,7 +19,7 @@ Here is the list of my commands, please read carefully everything. if anything h
 
 HOWTOUSEME_TEXT = """<b>ℹ️ Help</b> > How To Use Me
 
-My name is {}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
+My name is {Var.BOT_NAME}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
 
 • Send me any file/media from Telegram.
 • I Will provide an external download link for you.
@@ -48,7 +48,7 @@ All tutorials related to Bots, Website, Movies and etc, will be updated here. Ti
 
 ABOUT_TEXT = """<b>😊 About</b>
 
-<b>✯ My Name:</b> {}
+<b>✯ My Name:</b> {Var.BOT_NAME}
 <b>✯ Creator:</b> <a href='https://t.me/hagadmansa'>Hagadmansa</a>
 <b>✯ Library:</b> <a href='https://pyrogram.org'>Pyrogram</a>
 <b>✯ Language:</b> <a href='https://Python.org'>Python</a>
@@ -223,7 +223,7 @@ async def cb_data(bot, update):
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text=START_TEXT.format(m.from_user.mention, Var.BOT_NAME),
+        text=START_TEXT.format(Var.BOT_NAME),
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
@@ -235,15 +235,3 @@ async def command(b, m:Message):
         disable_web_page_preview=True,
     )
      
-@StreamBot.on_message(filters.command('howtouseme'))
-async def command(b, m:Message):
-    await m.reply_text(
-        text=HOWTOUSEME_TEXT.format(Var.BOT_NAME),
-        reply_markup=InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('🔙 Back', callback_data='help'),
-            InlineKeyboardButton('🏠 Home', callback_data='home')
-            ]]
-    ),
-        disable_web_page_preview=True,
-    )

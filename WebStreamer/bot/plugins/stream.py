@@ -33,8 +33,8 @@ async def media_receive_handler(_, m: Message):
             stream_link, short_link
         reply_markup = InlineKeyboardMarkup(
             [[
-              InlineKeyboardButton(text='Jauhhan', url='stream_link'),
-              InlineKeyboardButton(text='Hbh', url='short_link')
+              InlineKeyboardButton(text='Full Link', url='stream_link'),
+              InlineKeyboardButton(text='Short Link', url='short_link')
             ]])
         ),
         quote=True,

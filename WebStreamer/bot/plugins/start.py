@@ -5,9 +5,9 @@ from WebStreamer.bot import StreamBot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 START_TEXT = """
-👋 <b>Hello</b> {},
+👋 <b>Hello</b> {m.from_user.mention(style="md")},
 
-🤖 My Name is {}, I can stream Telegram Files over HTTP.
+🤖 My Name is Hagadmansa Mega Bot, I can stream Telegram Files over HTTP.
 
 🧐 Don't know how to do? No worries, just press the help button.
 
@@ -19,7 +19,7 @@ Here is the list of my commands, please read carefully everything. if anything h
 
 HOWTOUSEME_TEXT = """<b>ℹ️ Help</b> > How To Use Me
 
-My name is {}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
+My name is Hagadmansa Mega Bot, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
 
 • Send me any file/media from Telegram.
 • I Will provide an external download link for you.
@@ -27,7 +27,7 @@ My name is {}, I am a member of Hagadmansa family. I can provide you direct down
 
 <b>🔞 Warning:</b>
 
-• 18+ content and pornography are strictly prohibited. Don't send me any pornographic/violent videos. You will get an instant ban if we see any kind of content like this.""".format(Var.BOT_NAME)
+• 18+ content and pornography are strictly prohibited. Don't send me any pornographic/violent videos. You will get an instant ban if we see any kind of content like this."""
 
 INSTRUCTIONS_TEXT = """<b>ℹ️ Help</b> > Instructions
 
@@ -48,7 +48,7 @@ All tutorials related to Bots, Website, Movies and etc, will be updated here. Ti
 
 ABOUT_TEXT = """<b>😊 About</b>
 
-<b>✯ My Name:</b> {}
+<b>✯ My Name:</b> <a href='https://t.me/hagadmansamegabot'>Hagadmansa Mega Bot</a>
 <b>✯ Creator:</b> <a href='https://t.me/hagadmansa'>Hagadmansa</a>
 <b>✯ Library:</b> <a href='https://pyrogram.org'>Pyrogram</a>
 <b>✯ Language:</b> <a href='https://Python.org'>Python</a>
@@ -56,7 +56,7 @@ ABOUT_TEXT = """<b>😊 About</b>
 <b>✯ Server:</b> <a href='https://heroku.com'>Heroku</a>
 <b>✯ Channel:</b> <a href='https://t.me/hagadmansa'>Hagadmansa</a>
 <b>✯ Group:</b> <a href='https://t.me/hagadmansachat'>Hagadmansa Support</a>
-<b>✯ Brothers:</b> <a href='https://t.me/hagadmansabot'>Hagadmansa Bot</a>, <a href='https://t.me/hagadmansarobot'>Hagadmansa Robot</a>""".format(Var.BOT_NAME)
+<b>✯ Brothers:</b> <a href='https://t.me/hagadmansabot'>Hagadmansa Bot</a>, <a href='https://t.me/hagadmansarobot'>Hagadmansa Robot</a>"""
 
 RATING_TEXT = """<b>😊 About</b> > Rating
 
@@ -223,7 +223,13 @@ async def cb_data(bot, update):
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text=START_TEXT.format{m.from_user.mention(style="md"), Var.BOT_NAME},
+        text="""👋 <b>Hello</b> {m.from_user.mention(style="md")},
+
+🤖 My Name is {}, I can stream Telegram Files over HTTP.
+
+🧐 Don't know how to do? No worries, just press the help button.
+
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""".format){Var.BOT_NAME},
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),

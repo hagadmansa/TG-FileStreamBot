@@ -30,7 +30,7 @@ async def media_receive_handler(_, m: Message):
     logging.info(f"Generated link: {stream_link} for {m.from_user.first_name}")
     await m.reply_text(
         text="<code>{}</code>\n(<a href='{}'>shortened</a>)".format(
-            stream_link, short_link ),
+            stream_link, short_link),
         reply_markup=InlineKeyboardMarkup(
             [[
               InlineKeyboardButton(text='Full Link', url='stream_link'),

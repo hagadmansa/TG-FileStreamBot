@@ -225,11 +225,11 @@ async def command(b, m:Message):
     await m.reply_text(
         text="""👋 <b>Hello</b> {m.from_user.mention(style="md")},
 
-🤖 My Name is {}, I can stream Telegram Files over HTTP.
+🤖 My Name is Hagadmansa Mega Bot, I can stream Telegram Files over HTTP.
 
 🧐 Don't know how to do? No worries, just press the help button.
 
-👨‍💻 My Creator is <a href='https://t.me/hagadmansa>Hagadmansa'</a>.""".format{Var.BOT_NAME},
+👨‍💻 My Creator is <a href='https://t.me/hagadmansa>Hagadmansa'</a>.""",
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),

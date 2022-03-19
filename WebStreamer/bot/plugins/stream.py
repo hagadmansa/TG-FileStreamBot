@@ -1,6 +1,3 @@
-# This file is a part of TG-FileStreamBot
-# Coding : Jyothis Jayanth [@EverythingSuckz]
-
 import logging
 from pyrogram import filters
 from WebStreamer.vars import Var
@@ -34,10 +31,12 @@ async def media_receive_handler(_, m: Message):
     await m.reply_text(
         text="<code>{}</code>\n(<a href='{}'>shortened</a>)".format(
             stream_link, short_link
+        reply_markup = InlineKeyboardMarkup(
+            [[
+              InlineKeyboardButton(text='Jauhhan', url='stream_link'),
+              InlineKeyboardButton(text='Hbh', url='short_link')
+            ]])
         ),
         quote=True,
         parse_mode="html",
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("Open", url=stream_link)]]
-        ),
     )

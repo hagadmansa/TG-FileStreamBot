@@ -7,7 +7,7 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 START_TEXT = """
 👋 <b>Hello</b> {m.from_user.mention},
 
-🤖 My Name is {}, I can stream Telegram Files over HTTP.
+🤖 My Name is {Var.BOT_TOKEN}, I can stream Telegram Files over HTTP.
 
 🧐 Don't know how to do? No worries, just press the help button.
 
@@ -223,7 +223,7 @@ async def cb_data(bot, update):
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text=START_TEXT.format(Var.BOT_NAME),
+        text=START_TEXT,
         reply_markup=InlineKeyboardMarkup
         ([[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),

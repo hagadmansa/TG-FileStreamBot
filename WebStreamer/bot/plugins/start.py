@@ -4,16 +4,14 @@ from pyrogram.types import Message
 from WebStreamer.bot import StreamBot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-BOT_TOKEN = {Var.BOT_TOKEN}
-
 START_TEXT = """
 👋 <b>Hello</b> {m.from_user.mention},
 
-🤖 My Name is {BOT_TOKEN}, I can stream Telegram Files over HTTP.
+🤖 My Name is {}, I can stream Telegram Files over HTTP.
 
 🧐 Don't know how to do? No worries, just press the help button.
 
-👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>."""
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""".format{Var.BOT_TOKEN}
     
 HELP_TEXT = """<b>ℹ️ Help</b>
 
@@ -21,7 +19,7 @@ Here is the list of my commands, please read carefully everything. if anything h
 
 HOWTOUSEME_TEXT = """<b>ℹ️ Help</b> > How To Use Me
 
-My name is {BOT_TOKEN}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
+My name is {}, I am a member of Hagadmansa family. I can provide you direct download link of any telegram file/media. If you send me any file/media I will give an external download link, you can use that link to download any file outside telegram. My link is supported in any browser.
 
 • Send me any file/media from Telegram.
 • I Will provide an external download link for you.
@@ -50,7 +48,7 @@ All tutorials related to Bots, Website, Movies and etc, will be updated here. Ti
 
 ABOUT_TEXT = """<b>😊 About</b>
 
-<b>✯ My Name:</b> {BOT_TOKEN}
+<b>✯ My Name:</b> {}
 <b>✯ Creator:</b> <a href='https://t.me/hagadmansa'>Hagadmansa</a>
 <b>✯ Library:</b> <a href='https://pyrogram.org'>Pyrogram</a>
 <b>✯ Language:</b> <a href='https://Python.org'>Python</a>

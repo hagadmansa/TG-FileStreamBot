@@ -222,7 +222,7 @@ async def cb_data(bot, update):
 @StreamBot.on_message(filters.command('start'))
 async def command(b, m:Message):
     await m.reply_text(
-        text="""👋 <b>Hello Ji</b>,
+        text="""👋 <b>Hello</b>,
 
 🤖 My Name is Hagadmansa Mega Bot, I can stream Telegram Files over HTTP.
 

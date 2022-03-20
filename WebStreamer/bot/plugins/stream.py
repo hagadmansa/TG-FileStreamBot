@@ -35,8 +35,7 @@ async def media_receive_handler(_, m: Message):
             [[
               InlineKeyboardButton(text='Full Link', url='stream_link'),
               InlineKeyboardButton(text='Short Link', url='short_link')
-            ]])
-        ),
+            ]]),
         quote=True,
         parse_mode="html",
     )

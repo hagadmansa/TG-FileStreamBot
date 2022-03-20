@@ -28,10 +28,10 @@ async def media_receive_handler(_, m: Message):
     await m.reply_text(
         text="""Here is your link.""",
         reply_markup=InlineKeyboardMarkup(
-            [
+            [[
               InlineKeyboardButton(text='Full Link', url=stream_link),
               InlineKeyboardButton(text='Short Link', url=short_link)
-            ]),
+            ]]),
         quote=True,
         parse_mode="html",
     )

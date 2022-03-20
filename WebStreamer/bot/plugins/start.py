@@ -4,13 +4,13 @@ from pyrogram.types import Message
 from WebStreamer.bot import StreamBot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-START_TEXT = """👋 <b>Hello</b> {},
+START_TEXT = """👋 <b>Hello</b>,
 
 🤖 My Name is Hagadmansa Mega Bot, I can stream Telegram Files over HTTP.
 
 🧐 Don't know how to do? No worries, just press the help button.
 
-👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a."""
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>."""
    
 HELP_TEXT = """<b>ℹ️ Help</b>
 
@@ -166,7 +166,7 @@ DONATE_BUTTONS = InlineKeyboardMarkup(
 async def cb_data(bot, update):
     if update.data == "home":
         await update.message.edit_text(
-            text=START_TEXT.format(update.from_user.mention),
+            text=START_TEXT,
             disable_web_page_preview=True,
             reply_markup=START_BUTTONS
         )

@@ -26,12 +26,17 @@ async def media_receive_handler(_, m: Message):
     short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
     logging.info(f"Generated link: {stream_link} for {m.from_user.first_name}")
     await m.reply_text(
-        text="""Here is your link.""",
+        text="""<b>🤓 I generated to links for you, but both links work same. Just hold the inline button to copy the link</b>""",
         reply_markup=InlineKeyboardMarkup(
-            [[
-              InlineKeyboardButton(text='Full Link', url=stream_link),
-              InlineKeyboardButton(text='Short Link', url=short_link)
-            ]]),
+        [[
+            InlineKeyboardButton('📥 Full link', url=stream_link),
+            InlineKeyboardButton('📦 Short link', url=short_link)
+            ],[
+            InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
+            InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
+         ]]
+    )
+,
         quote=True,
         parse_mode="html",
     )

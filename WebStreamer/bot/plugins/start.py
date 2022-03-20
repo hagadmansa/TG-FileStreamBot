@@ -10,7 +10,7 @@ START_TEXT = f"👋 <b>Hello</b> {m.from_user.mention(style="md")},
 
 🧐 Don't know how to do? No worries, just press the help button.
 
-👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.
+👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>."
    
 HELP_TEXT = """<b>ℹ️ Help</b>
 

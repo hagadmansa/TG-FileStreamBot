@@ -34,9 +34,7 @@ async def media_receive_handler(_, m: Message):
             ],[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
             InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
-         ]]
-    )
-,
+         ]]),
         quote=True,
         parse_mode="html",
     )

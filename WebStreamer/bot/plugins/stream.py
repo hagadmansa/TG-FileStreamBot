@@ -47,6 +47,13 @@ async def channel_receive_handler(bot, broadcast):
     
     try:
         log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
+        stream_link = "https://t.me/hagadmansa"
+        
+        await log_msg.reply_text(
+            text="Hello ji namaste",
+            quote=True,
+            parse_mode="Markdown"
+        )
        
    await bot.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(

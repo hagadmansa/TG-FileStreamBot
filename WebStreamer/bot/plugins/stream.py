@@ -42,14 +42,18 @@ async def media_receive_handler(_, m: Message):
         parse_mode="html",
     )
     
+stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}"
+    
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
 async def channel_receive_handler(bot, broadcast):
+    
+stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}"
     
     try:
         log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
         
         await log_msg.reply_text(
-            text=f"<b>Request URL:</b> {Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}",
+            text="<b>Request URL:</b> {}".format(stream_link),
             quote=True,
             parse_mode="Markdown"
         )

@@ -50,7 +50,7 @@ async def channel_receive_handler(bot, broadcast):
         stream_link ="https://t.me/hagadmansa"
         
         await log_msg.reply_text(
-            text=f"<b>Channel Name:</b> {broadcast.chat.title} \n <b>Channel ID:</b> {broadcast.chat.id}< \n <b>UserRequest By:</b> <a href="tg://user?id={m.from_user.id}">{m.from_user.first_name}</a>.",
+            text=f"<b>Channel Name:</b> {broadcast.chat.title} \n <b>Channel ID:</b> {broadcast.chat.id}< \n <b>UserRequest By:</b> [{m.from_user.first_name}](tg://user?id={m.from_user.id})</a>.",
             quote=True,
             parse_mode="html"
         )

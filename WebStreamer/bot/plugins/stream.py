@@ -41,7 +41,6 @@ async def media_receive_handler(_, m: Message):
                     ]
                 ]
             ),
-        parse_mode="HTML"
     )
     
     await m.reply_text(

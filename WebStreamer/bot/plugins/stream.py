@@ -47,6 +47,7 @@ async def channel_receive_handler(bot, broadcast):
    await bot.edit_message_reply_markup(
             chat_id=broadcast.chat.id,
             message_id=broadcast.message_id,
+            log_msg = await bot.forward(chat_id=Var.BIN_CHANNEL),
             reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('📥 Full link', url="hgffyy.com"),

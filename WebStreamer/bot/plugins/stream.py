@@ -41,6 +41,8 @@ async def media_receive_handler(_, m: Message):
         quote=True,
         parse_mode="html",
     )
+    
+log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
 
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
 async def channel_receive_handler(bot, broadcast):

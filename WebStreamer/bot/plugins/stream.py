@@ -32,7 +32,7 @@ async def media_receive_handler(_, m: Message):
     await log_msg.reply_text(
             text=f"Here is the link genreated by {m.from_user.mention(style='md')}",
             quote=True,
-            parse_mode="HTML"
+            parse_mode="markdown"
         )
     
     await m.reply_text(

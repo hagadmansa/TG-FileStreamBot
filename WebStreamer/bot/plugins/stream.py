@@ -42,6 +42,8 @@ async def media_receive_handler(_, m: Message):
         parse_mode="html",
     )
 
+short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
+    
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
 async def channel_receive_handler(bot, broadcast):
     

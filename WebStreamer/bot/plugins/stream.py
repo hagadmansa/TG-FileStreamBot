@@ -64,7 +64,7 @@ async def channel_receive_handler(bot, broadcast):
         short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
         
         await log_msg.reply_text(
-            text=f"😍 Hello Himanshu, this file has been sent from **{broadcast.chat.title}**. You can view **{broadcast.chat.title}'s** all generated links with **{broadcast.chat.id}**.",
+            text=f"😍 Hello Himanshu, this file has been sent from **{broadcast.chat.title}**. You can view **{broadcast.chat.title}'s** all generated links with **#c{broadcast.chat.id}**.",
             quote=True,
             parse_mode="markdown",
             reply_markup=InlineKeyboardMarkup(

@@ -58,21 +58,13 @@ async def media_receive_handler(_, m: Message):
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
 async def channel_receive_handler(bot, broadcast):
     
-    chat = message.command[1]
-    try:
-        chat = int(chat)
-    except:
-        return await message.reply('Give Me A Valid Chat ID')
-    try:
-        link = await bot.create_chat_invite_link(chat)
-    
     try:
         log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
         stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
         
         await log_msg.reply_text(
-            text=f"😍 Hello Himanshu, this file has been sent from **{broadcast.chat.title}**. You can view **{broadcast.chat.title}'s** all generated links with **{broadcast.chat.id}**. Your Invite link is here {link.invite_link}.",
+            text=f"😍 Hello Himanshu, this file has been sent from **{broadcast.chat.title}**. You can view **{broadcast.chat.title}'s** all generated links with **{broadcast.chat.id}**.",
             quote=True,
             parse_mode="markdown",
             reply_markup=InlineKeyboardMarkup(

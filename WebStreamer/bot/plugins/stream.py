@@ -41,8 +41,6 @@ async def media_receive_handler(_, m: Message):
         quote=True,
         parse_mode="html",
     )
-
-short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
     
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
 async def channel_receive_handler(bot, broadcast):
@@ -61,8 +59,8 @@ async def channel_receive_handler(bot, broadcast):
             message_id=broadcast.message_id,
             reply_markup=InlineKeyboardMarkup(
         [[
-            InlineKeyboardButton('📥 Full link', url=stream_link),
-            InlineKeyboardButton('📦 Short link', url=short_link)
+            InlineKeyboardButton('📥 Full link', url=f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}"),
+            InlineKeyboardButton('📦 Short link', url=f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}")
             ],[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
             InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')]])

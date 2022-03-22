@@ -49,7 +49,7 @@ async def channel_receive_handler(bot, broadcast):
         log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
         
         await log_msg.reply_text(
-            text="<b>Request URL:</b> f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}",
+            text=f"<b>Request URL:</b> {Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}",
             quote=True,
             parse_mode="Markdown"
         )

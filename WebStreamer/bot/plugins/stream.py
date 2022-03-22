@@ -72,7 +72,7 @@ async def channel_receive_handler(bot, broadcast):
         await log_msg.reply_text(
             text=f"{m.from_user.mention(style='md')} #u{broadcast.chat.id}",
             quote=True,
-            parse_mode="HTML"
+            parse_mode="HTML",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [

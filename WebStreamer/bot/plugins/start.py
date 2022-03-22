@@ -32,11 +32,7 @@ Just add me in your channel as an admin, i will add a direct download link on ea
 
 • Add me in your Database Channel.
 • I Will provide an external download link for you.
-• All links will be permanent and have the fastest speed.
-
-<b>🔞 Warning:</b>
-
-• 18+ content and pornography are strictly prohibited. Don't send me any pornographic/violent videos. You will get an instant ban if we see any kind of content like this."""
+• All links will be permanent and have the fastest speed."""
 
 INSTRUCTIONS_TEXT = """<b>ℹ️ Help</b> > Instructions
 
@@ -50,15 +46,17 @@ INSTRUCTIONS_TEXT = """<b>ℹ️ Help</b> > Instructions
 1. Inline bots are not allows in channels.
 2. Don't forward me files, send them as a copy.
 3. Don't send too many files to your groups/channels.
-4. Bot takes time to generate and edit links, keep patience.
-
-<b>🔞 Warning:</b>
-
-• 18+ content and pornography are strictly prohibited. Don't send me any pornographic/violent videos. You will get an instant ban if we see any kind of content like this."""
+4. Bot takes time to generate and edit links, keep patience."""
 
 TUTORIALS_TEXT = """<b>ℹ️ Help</b> > Tutorials
 
-All tutorials related to Bots, Website, Movies and etc, will be updated here. Till then you can visit my movie website <b>www.hagadmansa.com</b> to watch movies. Don't forget to subscribe my updates channel <b>@hagadmansa</b>.
+All tutorials related to Bots, Website, Movies and etc, will be updated here. Till then you can visit my movie website <b>www.hagadmansa.com</b> to watch movies. Don't forget to subscribe my updates channel <b>@hagadmansa</b>."""
+
+WARNING_TEXT = """<b>ℹ️ Help</b> > Warning
+
+<b>❗️NOTE:</b>
+
+I Don't work in groups, i only works in group. if you will add me in group then i will not work there.
 
 <b>🔞 Warning:</b>
 
@@ -130,7 +128,7 @@ HELP_BUTTONS = InlineKeyboardMarkup(
             InlineKeyboardButton('🕹 Tutorials', callback_data='tutorials'),
             ],[
             InlineKeyboardButton('🔙 Back', callback_data='home'),
-            InlineKeyboardButton('📣 Channel', url='https://t.me/hagadmansa')
+            InlineKeyboardButton('⚠️ Warning', url='https://t.me/hagadmansa')
         ]]
     )
 HOWTOUSEME_BUTTONS = InlineKeyboardMarkup(
@@ -146,6 +144,12 @@ INSTRUCTIONS_BUTTONS = InlineKeyboardMarkup(
             ]]
    )
 TUTORIALS_BUTTONS = InlineKeyboardMarkup(
+        [[
+            InlineKeyboardButton('🔙 Back', callback_data='help'),
+            InlineKeyboardButton('🏠 Home', callback_data='home')
+            ]]
+    )
+WARNING_BUTTONS = InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('🔙 Back', callback_data='help'),
             InlineKeyboardButton('🏠 Home', callback_data='home')
@@ -206,6 +210,12 @@ async def cb_data(bot, update):
             text=INSTRUCTIONS_TEXT,
             disable_web_page_preview=True,
             reply_markup=INSTRUCTIONS_BUTTONS
+        )
+   elif update.data == "warning":
+        await update.message.edit_text(
+            text=WARNING_TEXT,
+            disable_web_page_preview=True,
+            reply_markup=WARNING_BUTTONS
         )
     elif update.data == "about":
         await update.message.edit_text(

@@ -44,8 +44,11 @@ async def media_receive_handler(_, m: Message):
 
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
 async def channel_receive_handler(bot, broadcast):
+    
+    try:
+        log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
+       
    await bot.edit_message_reply_markup(
-            log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL),
             reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('📥 Full link', url="hgffyy.com"),

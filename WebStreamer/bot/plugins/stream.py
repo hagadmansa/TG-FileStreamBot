@@ -44,13 +44,10 @@ async def media_receive_handler(_, m: Message):
 
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
 async def channel_receive_handler(bot, broadcast):
-    log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
+    log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL),
+    stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}",
+    short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}",
         await bot.edit_message_reply_markup(
-            chat_id=broadcast.chat.id,
-            message_id=broadcast.message_id,
-            log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL),
-            stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}",
-            short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}",
             reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('📥 Full link', url=stream_link),

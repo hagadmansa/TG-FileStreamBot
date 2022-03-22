@@ -58,7 +58,6 @@ async def channel_receive_handler(bot, broadcast):
         await bot.edit_message_reply_markup(
             chat_id=broadcast.chat.id,
             message_id=broadcast.message_id,
-            text="Hello my name is himanshu rastogi",
             reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('📥 Full link', url=stream_link),

@@ -46,18 +46,14 @@ async def media_receive_handler(_, m: Message):
     await m.reply_text(
         text="""<b>🤓 I generated 2 links for you, but both links work same. Just hold the inline button to copy the link.</b>""",
         reply_markup=InlineKeyboardMarkup(
-            [
                 [
-                    InlineKeyboardButton('📥 Full link', url=stream_link),
-                    InlineKeyboardButton('📦 Short link', url=short_link)
-                ],
-                [
-                    InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
-                    InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
+                    [
+                        InlineKeyboardButton('📥 Full link', url=stream_link),
+                        InlineKeyboardButton('📦 Short link', url=short_link)
+                    ]
                 ]
-            ]
+            )
         )
-    )
     
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
 async def channel_receive_handler(bot, broadcast):
@@ -88,10 +84,6 @@ async def channel_receive_handler(bot, broadcast):
                     [
                         InlineKeyboardButton('📥 Full link', url=stream_link),
                         InlineKeyboardButton('📦 Short link', url=short_link)
-                    ],
-                    [
-                        InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
-                        InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
                     ]
                 ]
             )

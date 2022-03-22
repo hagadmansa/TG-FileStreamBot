@@ -40,7 +40,7 @@ async def media_receive_handler(_, m: Message):
                         InlineKeyboardButton('📦 Short link', url=short_link)
                     ]
                 ]
-            ),
+            )
     )
     
     await m.reply_text(
@@ -56,9 +56,7 @@ async def media_receive_handler(_, m: Message):
                     InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
                 ]
             ]
-        ),
-        quote=True,
-        parse_mode="HTML"
+        )
     )
     
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
@@ -80,8 +78,8 @@ async def channel_receive_handler(bot, broadcast):
                         InlineKeyboardButton('📦 Short link', url=short_link)
                     ]
                 ]
-            ),
-    )
+            )
+        )
         await bot.edit_message_reply_markup(
             chat_id=broadcast.chat.id,
             message_id=broadcast.message_id,

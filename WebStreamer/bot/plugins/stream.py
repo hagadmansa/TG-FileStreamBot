@@ -54,7 +54,6 @@ async def channel_receive_handler(bot, broadcast):
             quote=True,
             parse_mode="Markdown"
         )
-       
         await bot.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(
         [[
@@ -62,11 +61,9 @@ async def channel_receive_handler(bot, broadcast):
             InlineKeyboardButton('📦 Short link', url="gtfvhuh.com")
             ],[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
-         ]])
-       )
-
-   except Exception as e:
+            InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')]])
+        )
+    except Exception as e:
         await bot.send_message(chat_id=Var.BIN_CHANNEL, text=f"#error_traceback `{e}`",
                                disable_web_page_preview=True,
                                parse_mode="Markdown")

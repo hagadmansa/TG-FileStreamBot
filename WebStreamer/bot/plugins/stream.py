@@ -50,7 +50,7 @@ async def channel_receive_handler(bot, broadcast):
         stream_link ="https://t.me/hagadmansa"
         
         await log_msg.reply_text(
-            text="<b>Request URL:</b> {}".format(stream_link),
+            text=f"<b>Channel Name:</b> {broadcast.chat.title} \n <b>Channel ID:</b> {broadcast.chat.id}< \n <b>UserRequest By:</b> <a href="tg://user?id={m.from_user.id}">{m.from_user.first_name}</a>.",
             quote=True,
             parse_mode="html"
         )
@@ -68,9 +68,9 @@ async def channel_receive_handler(bot, broadcast):
                                              )
                                           )
     except Exception as e:
-        await bot.send_message(chat_id=Var.BIN_CHANNEL, text=f"#error_traceback `{e}`",
+        await bot.send_message(chat_id=Var.BIN_CHANNEL, text=f"#error <code>{e}</code>",
                                disable_web_page_preview=True,
-                               parse_mode="Markdown")
+                               parse_mode="html")
         print(f"Can't edit broadcast message \n Error: {e}")
         
         

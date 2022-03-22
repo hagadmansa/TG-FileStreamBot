@@ -35,11 +35,11 @@ async def media_receive_handler(_, m: Message):
             parse_mode="markdown"
             reply_markup=InlineKeyboardMarkup(
             [[
-            InlineKeyboardButton('📥 Full link', url=stream_link),
-            InlineKeyboardButton('📦 Short link', url=short_link)
-            ]]                                  ),
-        quote=True,
-        parse_mode="HTML",
+                      InlineKeyboardButton('📥 Full link', url=stream_link),
+                      InlineKeyboardButton('📦 Short link', url=short_link)
+                      ]]                                  ),
+                  quote=True,
+                  parse_mode="HTML",
                             )
     
     await m.reply_text(

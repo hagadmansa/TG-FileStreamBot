@@ -60,6 +60,7 @@ async def channel_receive_handler(bot, broadcast):
     
     try:
         log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
+        chat = int(chat)
         stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
         link = await bot.create_chat_invite_link(chat)

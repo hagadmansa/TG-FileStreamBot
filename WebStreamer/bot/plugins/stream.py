@@ -42,6 +42,12 @@ async def media_receive_handler(_, m: Message):
         parse_mode="HTML",
     )
     
+await log_msg.reply_text(
+            text=f"<b>Channel Name:</b> {broadcast.chat.title} \n <b>Channel ID:</b> {broadcast.chat.id}",
+            quote=True,
+            parse_mode="HTML"
+        )
+    
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
 async def channel_receive_handler(bot, broadcast):
     

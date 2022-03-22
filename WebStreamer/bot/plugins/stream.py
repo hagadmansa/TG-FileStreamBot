@@ -30,7 +30,7 @@ async def media_receive_handler(_, m: Message):
     logging.info(f"Generated link: {stream_link} for {m.from_user.first_name}")
     
     await log_msg.reply_text(
-            text=f"<b>Channel Name:</b> {broadcast.chat.title} \n <b>Channel ID:</b> {broadcast.chat.id}",
+            text=f"<b>Channel Name:</b> {m.chat.title} \n <b>Channel ID:</b> {m.chat.id}",
             quote=True,
             parse_mode="HTML"
         )

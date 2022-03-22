@@ -128,7 +128,7 @@ HELP_BUTTONS = InlineKeyboardMarkup(
             InlineKeyboardButton('🕹 Tutorials', callback_data='tutorials'),
             ],[
             InlineKeyboardButton('🔙 Back', callback_data='home'),
-            InlineKeyboardButton('⚠️ Warning', url='https://t.me/hagadmansa')
+            InlineKeyboardButton('⚠️ Warning', callback_data='warning')
         ]]
     )
 HOWTOUSEME_BUTTONS = InlineKeyboardMarkup(

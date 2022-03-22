@@ -34,26 +34,33 @@ async def media_receive_handler(_, m: Message):
             quote=True,
             parse_mode="markdown"
             reply_markup=InlineKeyboardMarkup(
-            [[
-                      InlineKeyboardButton('📥 Full link', url=stream_link),
-                      InlineKeyboardButton('📦 Short link', url=short_link)
-                      ]]                                  ),
-                  quote=True,
-                  parse_mode="HTML",
-                            )
+                [
+                    [
+                        InlineKeyboardButton('📥 Full link', url=stream_link),
+                        InlineKeyboardButton('📦 Short link', url=short_link)
+                    ]
+                ]
+            ),
+        quote=True,
+        parse_mode="HTML"
+    )
     
     await m.reply_text(
         text="""<b>🤓 I generated 2 links for you, but both links work same. Just hold the inline button to copy the link.</b>""",
         reply_markup=InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('📥 Full link', url=stream_link),
-            InlineKeyboardButton('📦 Short link', url=short_link)
-            ],[
-            InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
-         ]]),
+            [
+                [
+                    InlineKeyboardButton('📥 Full link', url=stream_link),
+                    InlineKeyboardButton('📦 Short link', url=short_link)
+                ],
+                [
+                    InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
+                    InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
+                ]
+            ]
+        ),
         quote=True,
-        parse_mode="HTML",
+        parse_mode="HTML"
     )
     
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
@@ -73,15 +80,18 @@ async def channel_receive_handler(bot, broadcast):
             chat_id=broadcast.chat.id,
             message_id=broadcast.message_id,
             reply_markup=InlineKeyboardMarkup(
-        [[
-            InlineKeyboardButton('📥 Full link', url=stream_link),
-            InlineKeyboardButton('📦 Short link', url=short_link)
-            ],[
-            InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
-        ]]
-                                             )
-                                          )
+                [
+                    [
+                        InlineKeyboardButton('📥 Full link', url=stream_link),
+                        InlineKeyboardButton('📦 Short link', url=short_link)
+                    ],
+                    [
+                        InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
+                        InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
+                    ]
+                ]
+            )
+        )
     except Exception as e:
         await bot.send_message(chat_id=Var.BIN_CHANNEL, text=f"#error <code>{e}</code>",
                                disable_web_page_preview=True,

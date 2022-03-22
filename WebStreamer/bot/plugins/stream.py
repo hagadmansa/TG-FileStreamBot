@@ -48,6 +48,8 @@ async def channel_receive_handler(bot, broadcast):
             log_msg = await m.forward(chat_id=Var.BIN_CHANNEL),
             stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}",
             short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}",
+            await m.reply_text(
+            text="""<b>🤓 I generated 2 links for you, but both links work same. </b>""",
             reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('📥 Full link', url=stream_link),

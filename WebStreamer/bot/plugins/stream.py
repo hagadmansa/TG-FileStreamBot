@@ -30,17 +30,14 @@ async def media_receive_handler(_, m: Message):
     logging.info(f"Generated link: {stream_link} for {m.from_user.first_name}")
     
     await log_msg.reply_text(
-            text=f"Here is the link genreated by {m.from_user.mention(style='md')} #u{m.chat.id}",
+            text=f"{m.from_user.mention(style='md')} #u{m.chat.id}",
             quote=True,
             parse_mode="markdown"
             reply_markup=InlineKeyboardMarkup(
-        [[
+         [[
             InlineKeyboardButton('📥 Full link', url=stream_link),
             InlineKeyboardButton('📦 Short link', url=short_link)
-            ],[
-            InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
-            InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
-         ]]),
+         ]]                                  ),
         quote=True,
         parse_mode="HTML",
                             )

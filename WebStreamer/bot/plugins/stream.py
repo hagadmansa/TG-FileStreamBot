@@ -34,10 +34,10 @@ async def media_receive_handler(_, m: Message):
             quote=True,
             parse_mode="markdown"
             reply_markup=InlineKeyboardMarkup(
-         [[
+            [[
             InlineKeyboardButton('📥 Full link', url=stream_link),
             InlineKeyboardButton('📦 Short link', url=short_link)
-         ]]                                  ),
+            ]]                                  ),
         quote=True,
         parse_mode="HTML",
                             )

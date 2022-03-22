@@ -39,7 +39,7 @@ async def media_receive_handler(_, m: Message):
             InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
          ]]),
         quote=True,
-        parse_mode="html",
+        parse_mode="HTML",
     )
     
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
@@ -50,9 +50,9 @@ async def channel_receive_handler(bot, broadcast):
         stream_link ="https://t.me/hagadmansa"
         
         await log_msg.reply_text(
-            text=f"<b>Channel Name:</b> {broadcast.chat.title} \n <b>Channel ID:</b> {broadcast.chat.id}< \n <b>UserRequest By:</b> [{m.from_user.first_name}](tg://user?id={m.from_user.id})</a>.",
+            text=f"<b>Channel Name:</b> {broadcast.chat.title} \n <b>Channel ID:</b> {broadcast.chat.id}",
             quote=True,
-            parse_mode="html"
+            parse_mode="HTML"
         )
         await bot.edit_message_reply_markup(
             chat_id=broadcast.chat.id,
@@ -70,7 +70,7 @@ async def channel_receive_handler(bot, broadcast):
     except Exception as e:
         await bot.send_message(chat_id=Var.BIN_CHANNEL, text=f"#error <code>{e}</code>",
                                disable_web_page_preview=True,
-                               parse_mode="html")
+                               parse_mode="HTML")
         print(f"Can't edit broadcast message \n Error: {e}")
         
         

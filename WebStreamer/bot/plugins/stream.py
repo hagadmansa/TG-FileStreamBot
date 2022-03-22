@@ -30,7 +30,7 @@ async def media_receive_handler(_, m: Message):
     logging.info(f"Generated link: {stream_link} for {m.from_user.first_name}")
     
     await log_msg.reply_text(
-            text=f"Here is the link genreated by {m.from_user.mention(style="md")}",
+            text=f"Here is the link genreated by {m.from_user.mention(style='md')}",
             quote=True,
             parse_mode="HTML"
         )

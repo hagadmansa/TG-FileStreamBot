@@ -70,7 +70,7 @@ async def channel_receive_handler(bot, broadcast):
         short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
         
         await log_msg.reply_text(
-            text=f"{broadcast.from_user.mention(style='md')} #u{broadcast.chat.id}",
+            text="<b>🤓 I generated 2 links for you, but both links work same. Just hold the inline button to copy the link.",
             quote=True,
             parse_mode="HTML",
             reply_markup=InlineKeyboardMarkup(

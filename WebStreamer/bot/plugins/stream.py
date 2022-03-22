@@ -32,7 +32,7 @@ async def media_receive_handler(_, m: Message):
     await log_msg.reply_text(
             text=f"{m.from_user.mention(style='md')} #u{m.chat.id}",
             quote=True,
-            parse_mode="markdown"
+            parse_mode="markdown",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [

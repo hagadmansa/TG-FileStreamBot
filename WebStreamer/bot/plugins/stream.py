@@ -6,7 +6,6 @@ from WebStreamer.vars import Var
 from urllib.parse import quote_plus
 from WebStreamer.bot import StreamBot
 from WebStreamer.utils import get_hash, get_name
-from WebStreamer.utils.database import Database
 from WebStreamer.utils.human_readable import humanbytes
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton

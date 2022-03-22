@@ -70,10 +70,18 @@ async def channel_receive_handler(bot, broadcast):
         short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
         
         await log_msg.reply_text(
-            text=f"<b>Channel Name:</b> {broadcast.chat.title} \n <b>Channel ID:</b> {broadcast.chat.id}",
+            text=f"{m.from_user.mention(style='md')} #u{m.chat.id}"",
             quote=True,
             parse_mode="HTML"
-        )
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton('📥 Full link', url=stream_link),
+                        InlineKeyboardButton('📦 Short link', url=short_link)
+                    ]
+                ]
+            ),
+    )
         await bot.edit_message_reply_markup(
             chat_id=broadcast.chat.id,
             message_id=broadcast.message_id,

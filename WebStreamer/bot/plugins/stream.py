@@ -69,7 +69,7 @@ async def channel_receive_handler(bot, broadcast):
             ],[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
             InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
-         ]])
+         ]]))
     except FloodWait as w:
         print(f"Sleeping for {str(w.x)}s")
         await asyncio.sleep(w.x)

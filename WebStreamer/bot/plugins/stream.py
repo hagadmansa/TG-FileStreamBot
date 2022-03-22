@@ -47,7 +47,8 @@ async def channel_receive_handler(bot, broadcast):
     
     try:
         log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
-        stream_link = "https://t.me/hagadmansa"
+        stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}"
+        short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
         
         await log_msg.reply_text(
             text="Hello ji namaste",
@@ -59,8 +60,8 @@ async def channel_receive_handler(bot, broadcast):
             message_id=broadcast.message_id,
             reply_markup=InlineKeyboardMarkup(
         [[
-            InlineKeyboardButton('📥 Full link', url=f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}"),
-            InlineKeyboardButton('📦 Short link', url=f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}")
+            InlineKeyboardButton('📥 Full link', url=stream_link),
+            InlineKeyboardButton('📦 Short link', url=short_link)
             ],[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
             InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')]])

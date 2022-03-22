@@ -59,8 +59,8 @@ async def channel_receive_handler(bot, broadcast):
             message_id=broadcast.message_id,
             reply_markup=InlineKeyboardMarkup(
         [[
-            InlineKeyboardButton('📥 Full link', url="hgffyy.com"),
-            InlineKeyboardButton('📦 Short link', url="gtfvhuh.com")
+            InlineKeyboardButton('📥 Full link', url=stream_link),
+            InlineKeyboardButton('📦 Short link', url=short_link)
             ],[
             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
             InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')]])

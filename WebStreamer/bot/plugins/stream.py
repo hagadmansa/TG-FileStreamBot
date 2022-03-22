@@ -52,7 +52,7 @@ async def channel_receive_handler(bot, broadcast):
         await log_msg.reply_text(
             text="<b>Request URL:</b> {}".format(stream_link),
             quote=True,
-            parse_mode="Markdown"
+            parse_mode="html"
         )
         await bot.edit_message_reply_markup(
             chat_id=broadcast.chat.id,

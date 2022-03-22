@@ -28,6 +28,13 @@ async def media_receive_handler(_, m: Message):
     stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}"
     short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
     logging.info(f"Generated link: {stream_link} for {m.from_user.first_name}")
+    
+    await log_msg.reply_text(
+            text=f"<b>Channel Name:</b> {broadcast.chat.title} \n <b>Channel ID:</b> {broadcast.chat.id}",
+            quote=True,
+            parse_mode="HTML"
+        )
+    
     await m.reply_text(
         text="""<b>🤓 I generated 2 links for you, but both links work same. Just hold the inline button to copy the link.</b>""",
         reply_markup=InlineKeyboardMarkup(
@@ -41,12 +48,6 @@ async def media_receive_handler(_, m: Message):
         quote=True,
         parse_mode="HTML",
     )
-    
-await log_msg.reply_text(
-            text=f"<b>Channel Name:</b> {broadcast.chat.title} \n <b>Channel ID:</b> {broadcast.chat.id}",
-            quote=True,
-            parse_mode="HTML"
-        )
     
 @StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
 async def channel_receive_handler(bot, broadcast):

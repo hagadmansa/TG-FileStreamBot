@@ -30,7 +30,7 @@ async def media_receive_handler(_, m: Message):
     logging.info(f"Generated link: {stream_link} for {m.from_user.first_name}")
     
     await log_msg.reply_text(
-            text=f"🤓 I generated 2 links for {m.from_user.mention(style='md')}. User ID is: #u{m.chat.id}",
+            text=f"😎 Hello Himanshu, i generated 2 links for **{m.from_user.mention(style='md')}**. You can view **{m.from_user.mention(style='md')}'s** all generated links with **#u{m.chat.id}**.",
             quote=True,
             parse_mode="markdown",
             reply_markup=InlineKeyboardMarkup(
@@ -64,7 +64,7 @@ async def channel_receive_handler(bot, broadcast):
         short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
         
         await log_msg.reply_text(
-            text=f"🤓 I generated 2 links for {broadcast.from_user.mention(style='md')}. User ID is: #u{broadcast.chat.id}",
+            text=f"😍 Hello Himanshu, this file has been sent from **{broadcast.chat.title}**. You can view **{broadcast.chat.title}'s** all generated links with **{broadcast.chat.id}**".,
             quote=True,
             parse_mode="markdown",
             reply_markup=InlineKeyboardMarkup(

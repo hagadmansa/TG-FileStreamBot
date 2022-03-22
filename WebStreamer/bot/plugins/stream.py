@@ -55,6 +55,8 @@ async def channel_receive_handler(bot, broadcast):
             parse_mode="Markdown"
         )
         await bot.edit_message_reply_markup(
+            chat_id=broadcast.chat.id,
+            message_id=broadcast.message_id,
             reply_markup=InlineKeyboardMarkup(
         [[
             InlineKeyboardButton('📥 Full link', url="hgffyy.com"),

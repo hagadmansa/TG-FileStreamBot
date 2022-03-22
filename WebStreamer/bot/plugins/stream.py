@@ -68,7 +68,7 @@ async def channel_receive_handler(bot, broadcast):
         short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
         
         await log_msg.reply_text(
-            text=f"🤓 I generated 2 links for {m.from_user.mention(style='md')}. User ID is: #u{m.chat.id}",
+            text=f"🤓 I generated 2 links for {broadcast.from_user.mention(style='md')}. User ID is: #u{broadcast.chat.id}",
             quote=True,
             parse_mode="markdown",
             reply_markup=InlineKeyboardMarkup(

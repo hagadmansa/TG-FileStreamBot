@@ -45,6 +45,8 @@ async def media_receive_handler(_, m: Message):
     
     await m.reply_text(
         text="""<b>🤓 I generated 2 links for you, but both links work same. Just hold the inline button to copy the link.</b>""",
+        quote=True,
+        parse_mode="html",
         reply_markup=InlineKeyboardMarkup(
                 [
                     [

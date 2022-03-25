@@ -32,9 +32,4 @@ class Var(object):
         if not ON_HEROKU or environ.get("FQDN")
         else APP_NAME + ".herokuapp.com"
     )
-    if ON_HEROKU:
-        URL = f"https://{FQDN}/"
-    else:
-        URL = "http{}://{}{}/".format(
-            "s" if HAS_SSL else "", FQDN, "" if NO_PORT else ":" + str(PORT)
-        )
+    URL = f"https://download.hagadmansa.com/"

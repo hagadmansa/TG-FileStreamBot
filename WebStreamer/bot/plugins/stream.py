@@ -61,7 +61,7 @@ async def media_receive_handler(b, m: Message):
 async def channel_receive_handler(bot, broadcast):
     
     try:
-        log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
+        log_msg = await bot.copy_message(chat_id=Var.BIN_CHANNEL, from_chat_id=m.chat.id, message_id=m.message_id)
         stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
         short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
         

@@ -62,8 +62,8 @@ async def channel_receive_handler(bot, broadcast):
     
     try:
         log_msg = await broadcast.forward(chat_id=Var.BIN_CHANNEL)
-        stream_link = f"{Var.URL}{log_msg.message_id}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-        short_link = f"{Var.URL}{get_hash(log_msg)}{log_msg.message_id}"
+        stream_link = f"{Var.URL}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+        short_link = f"{Var.URL}{get_hash(log_msg)}"
         
         await log_msg.reply_text(
             text=f"😍 Hello Himanshu, this file has been sent from **{broadcast.chat.title}**. You can view **{broadcast.chat.title}'s** all generated links with **#{broadcast.chat.id}**.".replace('-', 'c'),

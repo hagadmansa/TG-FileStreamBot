@@ -42,9 +42,11 @@ async def stream_handler(request: web.Request):
         match = re.search(r"^([a-zA-Z0-9_-]{6})(\d+)$", path)
         if match:
             secure_hash = match.group(1)
+            message_id = int(match.group(2))
         else:
+            message_id = int(re.search(r"(\d+)(?:\/\S+)?", path).group(1))
             secure_hash = request.rel_url.query.get("hash")
-        return await media_streamer(request, secure_hash)
+        return await media_streamer(request, message_id, secure_hash)
     except InvalidHash as e:
         raise web.HTTPForbidden(text=e.message)
     except FIleNotFound as e:
@@ -57,7 +59,7 @@ async def stream_handler(request: web.Request):
 
 class_cache = {}
 
-async def media_streamer(request: web.Request, secure_hash: str):
+async def media_streamer(request: web.Request, message_id: int, secure_hash: str):
     range_header = request.headers.get("Range", 0)
     
     index = min(work_loads, key=work_loads.get)
@@ -78,6 +80,7 @@ async def media_streamer(request: web.Request, secure_hash: str):
     logging.debug("after calling get_file_properties")
     
     if file_id.unique_id[:6] != secure_hash:
+        logging.debug(f"Invalid hash for message with ID {message_id}")
         raise InvalidHash
     
     file_size = file_id.file_size

@@ -30,28 +30,26 @@ async def media_receive_handler(b, m: Message):
     logging.info(f"Generated link: {stream_link} for {m.from_user.first_name}")
     
     await log_msg.reply_text(
-            text=f"😎 Hello Himanshu, i generated 2 links for **{m.from_user.mention(style='md')}**. You can view **{m.from_user.mention(style='md')}'s** all generated links with **#u{m.chat.id}**.",
+            text=f"😎 Hello Himanshu, i generated a link for **{m.from_user.mention(style='md')}**. You can view **{m.from_user.mention(style='md')}'s** all generated links with **#u{m.chat.id}**.",
             quote=True,
             parse_mode="markdown",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('📥 Full link', url=stream_link),
-                        InlineKeyboardButton('📦 Short link', url=short_link)
+                        InlineKeyboardButton('📥 Stream link', url=short_link)
                     ]
                 ]
             )
     )
     
     await m.reply_text(
-        text="""<b>🤓 I generated 2 links for you, but both links work same. Just hold the inline button to copy the link.</b>""",
+        text="""<b>🤓 Just reply this file with /link to generate an extra link.</b>""",
         quote=True,
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton('📥 Full link', url=stream_link),
-                        InlineKeyboardButton('📦 Short link', url=short_link)
+                        InlineKeyboardButton('📥 Stream link', url=short_link)
                     ]
                 ]
             )

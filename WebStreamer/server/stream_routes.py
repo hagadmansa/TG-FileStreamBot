@@ -31,6 +31,7 @@ async def root_route_handler(_):
                 )
             ),
             "version": __version__,
+            "Website": "Visit our website www.hagadmansa.com to download movies. if fount any error contact us through @hagadmansabot on Telegram or you can also use our website's report feature.",
         }
     )
 

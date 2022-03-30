@@ -57,7 +57,7 @@ async def media_receive_handler(b, m: Message):
             )
         )
     
-@StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
+#@StreamBot.on_message(filters.channel & (filters.document | filters.video) & ~filters.edited, group=-1)
 async def channel_receive_handler(bot, broadcast):
     
     try:

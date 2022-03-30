@@ -9,7 +9,7 @@ from WebStreamer.utils import get_hash, get_name
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-#@StreamBot.on_message(
+@StreamBot.on_message(
     filters.private
     & (
         filters.document

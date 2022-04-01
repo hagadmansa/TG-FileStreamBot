@@ -22,7 +22,6 @@ async def root_route_handler(_):
         {
             "server_status": "running",
             "uptime": utils.get_readable_time(time.time() - StartTime),
-            "telegram_bot": "@" + StreamBot.username,
             "connected_bots": len(multi_clients),
             "loads": dict(
                 ("bot" + str(c + 1), l)
@@ -31,7 +30,7 @@ async def root_route_handler(_):
                 )
             ),
             "version": __version__,
-            "Website": "Visit our website www.hagadmansa.com to download movies. if fount any error contact us through @hagadmansabot on Telegram or you can also use our website's report feature.",
+            "Website": "Visit our website www.hagadmansa.com to download movies. if found any error contact us through @hagadmansachat on Telegram or you can also use our website's report feature.",
         }
     )
 

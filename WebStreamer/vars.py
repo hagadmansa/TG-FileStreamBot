@@ -32,4 +32,4 @@ class Var(object):
         if not ON_HEROKU or environ.get("FQDN")
         else APP_NAME + ".herokuapp.com"
     )
-    URL = f"https://download.hagadmansa.com/"
+    URL = f"http://download.hagadmansa.com/"

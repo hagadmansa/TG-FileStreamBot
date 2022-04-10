@@ -1,6 +1,6 @@
 
 class InvalidHash(Exception):
-    message = "If you are redirected here from www.hagadmansa.com in case of finding a movie, then please wait some time we'll try to recover this movie as soon as possible. Till then you can message us on Telegram at @hagadmansachat we'll provide an alternative movie file for you. If you want to download this file or you have generated the link of this file or you are the owner of this file please contact us on telegram at @hagadmansachat. (Note: Do not forget to copy the url of this file as a proof.)"
+    message = "🗑 This file has been deleted for some reason, it is not a permanent reason it may be temporary. 🗣 Please report it on telegram @hagadmansachat we will try to recover this file as soon as possible. (🔗 Note: do not forgot to copy url of this file as a evidence.)"
 
 class FIleNotFound(Exception):
-    message = "If you are redirected here from www.hagadmansa.com in case of finding a movie, then please wait some time we'll try to recover this movie as soon as possible. Till then you can message us on Telegram at @hagadmansachat we'll provide an alternative movie file for you. If you want to download this file or you have generated the link of this file or you are the owner of this file please contact us on telegram at @hagadmansachat. (Note: Do not forget to copy the url of this file as a proof.)"
+    message = "🗑 This file has been deleted for some reason, it is not a permanent reason it may be temporary. 🗣 Please report it on telegram @hagadmansachat we will try to recover this file as soon as possible. (🔗 Note: do not forgot to copy url of this file as a evidence.)"

@@ -250,11 +250,11 @@ async def cb_data(bot, update):
         )
         
 @StreamBot.on_message(filters.command('start'))
-async def command(b, m:Message):
-    if m.from_user and m.from_user.id in ADMINS:
-        return await m.reply(
+async def start(bot, message):
+    if message.from_user and message.from_user.id in ADMINS:
+        await message.reply(
         text="""😊 I am working.""",
         )
-     if m.from_user and m.from_user.id not in ADMINS:
-        await m.delete()
+     if message.from_user and message.from_user.id not in ADMINS:
+        await message.delete()
         

@@ -250,11 +250,22 @@ async def cb_data(bot, update):
         )
         
 @StreamBot.on_message(filters.command('start'))
-async def start(bot, message):
-    if message.from_user and message.from_user.id in ADMINS:
-        await message.reply(
-        text="""😊 I am working.""",
-        )
-     if message.from_user and message.from_user.id not in ADMINS:
-        await message.delete()
-        
+async def start(b, m:Message):
+    await m.reply_text(
+         text="""👋 <b>Hello</b>,
+
+ 🤖 My Name is Hagadmansa Mega Bot, I can stream Telegram Files over HTTP.
+
+ 🧐 Don't know how to do? No worries, just press the help button.
+
+ 👨‍💻 My Creator is <a href=https://t.me/hagadmansa>Hagadmansa</a>.""",
+         reply_markup=InlineKeyboardMarkup
+         ([[
+             InlineKeyboardButton('🌐 Website', url='https://hagadmansa.com'),
+             InlineKeyboardButton('📣 Updates', url='https://t.me/hagadmansa')
+             ],[
+             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+             InlineKeyboardButton('😊 About', callback_data='about')
+         ]]),
+         disable_web_page_preview=True,
+     )

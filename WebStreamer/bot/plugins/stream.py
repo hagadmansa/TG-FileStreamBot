@@ -9,20 +9,7 @@ from WebStreamer.utils import get_hash, get_name
 from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
-@StreamBot.on_message(
-    filters.private
-    & (
-        filters.document
-        | filters.video
-        | filters.audio
-        | filters.animation
-        | filters.voice
-        | filters.video_note
-        | filters.photo
-        | filters.sticker
-    ),
-    group=4,
-)
+@StreamBot.on_message(filters.private & (filters.document | filters.video | filters.audio), group=4,)
 async def media_receive_handler(b, m: Message):
     log_msg = await b.copy_message(chat_id=Var.BIN_CHANNEL, from_chat_id=m.chat.id, message_id=m.message_id)
     stream_link = f"{Var.URL}/{log_msg.message_id}/{quote_plus(get_name(m))}?hash={get_hash(log_msg)}"

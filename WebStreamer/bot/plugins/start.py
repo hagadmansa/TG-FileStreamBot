@@ -269,3 +269,13 @@ async def start(b, m:Message):
          ]]),
          disable_web_page_preview=True,
      )
+      
+@StreamBot.on_message((filters.document | filters.video) & filters.chat(-1001541636745))
+async def autoddfs(bot, message: Message):
+   dd = await message.reply("/dd")
+   await asyncio.sleep(0.5)
+   await dd.delete()
+   await asyncio.sleep(0.5)
+   fs = await message.reply("/fs")
+   await asyncio.sleep(0.5)
+   await fe.delete()

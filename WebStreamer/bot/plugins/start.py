@@ -1,4 +1,4 @@
-from pyrogram import filters
+from pyrogram import filters, Client
 from WebStreamer.vars import Var
 from pyrogram.types import Message
 from info import ADMINS
@@ -249,7 +249,7 @@ async def cb_data(bot, update):
             reply_markup=DONATE_BUTTONS
         )
         
-@StreamBot.on_message(filters.command('start'))
+@Client.on_message(filters.command('start'))
 async def start(b, m:Message):
     await m.reply_text(
          text="""👋 <b>Hello</b>,
@@ -271,7 +271,7 @@ async def start(b, m:Message):
          quote=True,
      )
       
-@StreamBot.on_message((filters.document | filters.video) & filters.chat(-1001541636745))
+@Client.on_message((filters.document | filters.video) & filters.chat(-1001541636745))
 async def autoddfs(bot, message: Message):
    dd = await message.reply(
       text="/dd",
@@ -287,7 +287,7 @@ async def autoddfs(bot, message: Message):
    await asyncio.sleep(0.5)
    await fs.delete()
   
-@StreamBot.on_message(filters.command("helllo"))
+@Client.on_message(filters.command("helllo"))
 async def hello(bot, message):
    await message.reply(
       text="hello",

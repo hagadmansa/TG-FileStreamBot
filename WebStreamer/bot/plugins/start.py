@@ -293,3 +293,13 @@ async def hello(bot, message):
       text="hello",
       quote=True
    )
+
+@Client.on_message(filters.command('start') & filters.private)
+async def start(client, message):
+    await message.reply_text(
+        text=START_MSG.format(message.from_user.mention),
+        disable_web_page_preview=True,
+        reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text="OWNER",url = "t.me/owner")]]),
+        reply_to_message_id=message.message_id,
+        parse_mode="combined"
+    )

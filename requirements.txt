@@ -1,4 +1,4 @@
 aiohttp
-Pyrogram==1.2.20
+Pyrogram==2.0.17
 python-dotenv
 tgcrypto

@@ -287,7 +287,7 @@ async def autoddfs(bot, message: Message):
    await asyncio.sleep(0.5)
    await fs.delete()
   
-@StreamBot.on_message(filters.commands("helllo"))
+@StreamBot.on_message(filters.command("helllo"))
 async def hello(bot, message):
    await message.reply(
       text="hello",

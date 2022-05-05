@@ -272,10 +272,16 @@ async def start(b, m:Message):
       
 @StreamBot.on_message((filters.document | filters.video) & filters.chat(-1001541636745))
 async def autoddfs(bot, message: Message):
-   dd = await message.reply("/dd")
+   dd = await message.reply(
+      text="/dd",
+      quote=True
+   )
    await asyncio.sleep(0.5)
    await dd.delete()
    await asyncio.sleep(0.5)
-   fs = await message.reply("/fs")
+   fs = await message.reply(
+      text "/fs",
+      quote=True
+   )
    await asyncio.sleep(0.5)
    await fe.delete()

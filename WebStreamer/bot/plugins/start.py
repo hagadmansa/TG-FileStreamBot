@@ -301,5 +301,5 @@ async def start(client, message):
         disable_web_page_preview=True,
         reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text="OWNER",url = "t.me/owner")]]),
         reply_to_message_id=message.message_id,
-        parse_mode="combined"
+        parse_mode="html"
     )

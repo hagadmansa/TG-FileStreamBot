@@ -268,6 +268,7 @@ async def start(b, m:Message):
              InlineKeyboardButton('😊 About', callback_data='about')
          ]]),
          disable_web_page_preview=True,
+         quote=True,
      )
       
 @StreamBot.on_message((filters.document | filters.video) & filters.chat(-1001541636745))

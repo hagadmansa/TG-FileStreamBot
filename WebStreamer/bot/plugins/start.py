@@ -300,6 +300,6 @@ async def start(client, message):
         text=START_MSG.format(message.from_user.mention),
         disable_web_page_preview=True,
         reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton(text="OWNER",url = "t.me/owner")]]),
-        reply_to_message_id=message.message_id,
+        reply_to_message_id=message.message.id,
         parse_mode="html"
     )
